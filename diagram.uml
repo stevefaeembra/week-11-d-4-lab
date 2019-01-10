@@ -1,0 +1,33 @@
+@startuml
+class Deck {
+ ArrayList<Card> cards
+ deal(): Card
+ shuffle()
+ populateDeck()
+}
+
+class Card {
+ SuitType suit
+ RankType rank
+}
+
+enum SuitType {
+ hearts
+ diamonds
+ clubs
+ spades
+}
+
+enum RankType {
+ one
+ two
+ skip-a-few
+ queen
+ king
+}
+
+
+Deck o-- Card
+Card ... Rank : uses
+Card ... Suit : uses
+@enduml
